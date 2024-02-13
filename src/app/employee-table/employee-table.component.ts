@@ -7,7 +7,7 @@ import {MatTableModule} from '@angular/material/table';
 @Component({
   selector: 'app-employee-table',
   standalone: true,
-  imports: [MatTableModule],
+  imports: [MatTableModule ],
   templateUrl: './employee-table.component.html',
   styleUrl: './employee-table.component.scss'
 })
@@ -24,6 +24,6 @@ export class EmployeeTableComponent {
     {position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F'},
     {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
   ];
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+  displayedColumns: string[] = ['name','position', 'weight', 'symbol'];
   dataSource = this.ELEMENT_DATA;
 }
