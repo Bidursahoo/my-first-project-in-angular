@@ -1,0 +1,154 @@
+<form id="form2" class="form-group">
+  <div class="d-flex justify-content-center align-items-center">
+    <div class="conatiner w-75">
+      <div class="row">
+        <div class="d-flex align-items-center justify-content-center col-6">
+          <table class="auto-style2 flex">
+            <tbody>
+              <tr>
+                <td>
+                  <label id="Department" class="form-label fs-5 fw-bolder"
+                    >Department</label
+                  >
+                </td>
+                <td>
+                  <select
+                    id="DepartmentList"
+                    class="form-select form-select-sm"
+                    formControlName="departmentList"
+                    
+                  >
+                    <option
+                      value="{{ dept.departmentId }}"
+                      class="dropdown-item"
+                      *ngFor="let dept of departmentList"
+                    >
+                      {{ dept.departmentName }}
+                    </option>
+                  </select>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <label id="Years" class="form-label fs-5 fw-bolder"
+                    >Year</label
+                  >
+                </td>
+                <td>
+                  <select
+                    id="YearsList"
+                    class="form-select form-select-sm"
+                  ></select>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label id="Months" class="form-label fs-5 fw-bolder"
+                    >Months</label
+                  >
+                </td>
+                <td>
+                  <select
+                    id="MonthList"
+                    class="form-select form-select-sm"
+                  ></select>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label id="EmpId" class="form-label fs-5 fw-bolder"
+                    >Employee Id</label
+                  >
+                </td>
+                <td>
+                  <select
+                    id="EmployeeIdList"
+                    class="form-select form-select-sm"
+                  ></select>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label id="BasicPay" class="form-label fs-5 fw-bolder"
+                    >Basic Pay</label
+                  >
+                </td>
+                <td>
+                  <input
+                    id="BasicPayTextBox"
+                    class="form-control"
+                    type="number"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label
+                    id="TravellingAllowance"
+                    class="form-label fs-5 fw-bolder"
+                    >Travelling Allowance</label
+                  >
+                </td>
+                <td>
+                  <input
+                    id="TravellingAllowanceTextBox"
+                    class="form-control"
+                    type="number"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label
+                    ID="DearnessAllowance"
+                    class="form-label fs-5 fw-bolder"
+                    >Dearness Allowance</label
+                  >
+                </td>
+                <td>
+                  <input
+                    ID="DearnessAllowanceTextBox"
+                    class="form-control"
+                    type="number"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label
+                    ID="HouseRentAllowance"
+                    class="form-label fs-5 fw-bolder"
+                    >House Rent Allowance</label
+                  >
+                </td>
+                <td>
+                  <input
+                    ID="HouseRentAllowanceTextBox"
+                    class="form-control"
+                    type="number"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>
+                  <button class="btn btn-danger" id="Reset">Reset</button>
+                  <button class="btn btn-primary" id="Submit">Submit</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="d-flex align-items-center justify-content-center col-6">
+          <div class="conatiner">
+            <div class="row">
+              <label id="TempText" Text=""></label>
+              <label id="HiddenFieldForUpdate"></label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

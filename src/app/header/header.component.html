@@ -2,11 +2,14 @@
     <div class="row">
         <h1 class="">Employee Management Tool</h1>
         <ul class="nav nav-pills">
-            <li class="nav-item">
-                <a href="" class="nav-link active">EMPLOYEE</a>
+            <li class="nav-item" [routerLinkActive]="['active']">
+                <a routerLink="/" class="nav-link">HOME</a>
+            </li> 
+            <li class="nav-item" [routerLinkActive]="['active']">
+                <a routerLink="/employee" class="nav-link">EMPLOYEE</a>
             </li>
-            <li class="nav-item">
-                <a href="" class="nav-link ">SALARY</a>
+            <li class="nav-item" [routerLinkActive]="['active']">
+                <a routerLink="/salary"  class="nav-link">SALARY</a>
             </li>
         </ul>
     </div>
