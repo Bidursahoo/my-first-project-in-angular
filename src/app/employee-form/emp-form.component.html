@@ -3,212 +3,224 @@
     <div class="row">
       <div class="d-flex align-items-center justify-content-center col-6">
         <form [formGroup]="regForm">
-        <table class="auto-style2 flex">
-          
-          <tbody>
-          <tr>
-            <td class="auto-style1">
-              <span class="form-label fs-5 fw-bolder" id="Department"
-                >Depatment</span
-              >
-            </td>
-            <td class="auto-style1">
-              <select
-                name="Department"
-                id="Department"
-                class="form-select form-select-sm"
-                formControlName="departmentId"
-              >
-                <option class="dropdown-item" value="1">Department 1</option>
-                <option class="dropdown-item" value="2">Department 2</option>
-                <option class="dropdown-item" value="3">Department 3</option>
-              </select>
-            </td>
-          </tr>
-          <tr>
-            <td class="auto-style1">
-              <span class="form-label fs-5 fw-bolder" id="EmpId"
-                >Employee Id</span
-              >
-            </td>
-            <td class="auto-style1">
-              <input
-                type="text"
-                name="EmpIdTextBox"
-                class="form-control"
-                id="EmpIdTextBox"
-                formControlName = "empId"
-              />
-            </td>
-          </tr>
-          <tr>
-            <td class="auto-style1">
-              <span class="form-label fs-5 fw-bolder" id="FirstName" 
-                >First Name</span
-              >
-            </td>
-            <td class="auto-style1">
-              <input type="text" class="form-control" id="FirstNameTextBox" formControlName="firstName"/>
-            </td>
-          </tr>
-          <tr>
-            <td class="auto-style1">
-              <span class="form-label fs-5 fw-bolder" id="LastName"
-                >Last Name</span
-              >
-            </td>
-            <td class="auto-style1">
-              <input
-                type="text"
-                name="lastName"
-                id="LastNameTextBox"
-                class="form-control"
-                formControlName="lastName"
-              />
-            </td>
-          </tr>
-          <tr>
-            <td class="auto-style1">
-              <span class="form-label fs-5 fw-bolder" id="Email"
-                >Email Address</span
-              >
-            </td>
-            <td class="auto-style1">
-              <input
-                type="email"
-                name="email"
-                id="EmailTextBox"
-                class="form-control"
-                formControlName="emailId"
-              />
-            </td>
-          </tr>
-          <tr>
-            <td class="auto-style1">
-              <span class="form-label fs-5 fw-bolder" id="Gender">Gender</span>
-            </td>
-            <td class="auto-style1">
-              <div class="form-check">
-                <input
-                  class="form-check-input"
-                  type="radio"
-                  name="gender"
-                  id="maleRadioBtn"
-                  value="Male"
-                  formControlName = "gender"
-                />
-                <label class="form-check-label" for="male"> Male </label>
-              </div>
-              <div class="form-check">
-                <input
-                  class="form-check-input"
-                  type="radio"
-                  name="gender"
-                  id="femaleRadioBtn"
-                  value="Female"
-                  formControlName="gender"
-                />
-                <label class="form-check-label" for="female"> Female </label>
-              </div>
-            </td>
-          </tr>
+          <table class="auto-style2 flex">
+            <tbody>
+              <tr>
+                <td class="auto-style1">
+                  <span class="form-label fs-5 fw-bolder" id="Department"
+                    >Depatment</span
+                  >
+                </td>
+                <td class="auto-style1">
+                  <select
+                    name="Department"
+                    id="Department"
+                    class="form-select form-select-sm"
+                    formControlName="departmentId"
+                  >
+                    <option
+                      value="{{ dept.ID }}"
+                      class="dropdown-item"
+                      *ngFor="let dept of departmentList"
+                    >
+                      {{ dept.DEPT_NAME }}
+                    </option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td class="auto-style1">
+                  <span class="form-label fs-5 fw-bolder" id="EmpId"
+                    >Employee Id</span
+                  >
+                </td>
+                <td class="auto-style1">
+                  <input
+                    type="text"
+                    name="EmpIdTextBox"
+                    class="form-control"
+                    id="EmpIdTextBox"
+                    formControlName="empId"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td class="auto-style1">
+                  <span class="form-label fs-5 fw-bolder" id="FirstName"
+                    >First Name</span
+                  >
+                </td>
+                <td class="auto-style1">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="FirstNameTextBox"
+                    formControlName="firstName"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td class="auto-style1">
+                  <span class="form-label fs-5 fw-bolder" id="LastName"
+                    >Last Name</span
+                  >
+                </td>
+                <td class="auto-style1">
+                  <input
+                    type="text"
+                    name="lastName"
+                    id="LastNameTextBox"
+                    class="form-control"
+                    formControlName="lastName"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td class="auto-style1">
+                  <span class="form-label fs-5 fw-bolder" id="Email"
+                    >Email Address</span
+                  >
+                </td>
+                <td class="auto-style1">
+                  <input
+                    type="email"
+                    name="email"
+                    id="EmailTextBox"
+                    class="form-control"
+                    formControlName="emailId"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td class="auto-style1">
+                  <span class="form-label fs-5 fw-bolder" id="Gender"
+                    >Gender</span
+                  >
+                </td>
+                <td class="auto-style1">
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="gender"
+                      id="maleRadioBtn"
+                      value="Male"
+                      formControlName="gender"
+                    />
+                    <label class="form-check-label" for="male"> Male </label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="gender"
+                      id="femaleRadioBtn"
+                      value="Female"
+                      formControlName="gender"
+                    />
+                    <label class="form-check-label" for="female">
+                      Female
+                    </label>
+                  </div>
+                </td>
+              </tr>
 
-          <tr>
-            <td class="auto-style1">
-              <span class="form-label fs-5 fw-bolder" id="Address"
-                >Address</span
-              >
-            </td>
-            <td class="auto-style1">
-              <textarea
-                name=""
-                id="AddressTextArea"
-                class="form-control"
-                cols="2"
-                rows="2"
-                formControlName="address"
-              ></textarea>
-            </td>
-          </tr>
-          <tr>
-            <td class="auto-style1">
-              <span class="form-label fs-5 fw-bolder" id="PhoneNumber"
-                >Phone Number</span
-              >
-            </td>
-            <td class="auto-style1">
-              <input
-                type="number"
-                name=""
-                class="form-control"
-                id="PhoneNumberTextBox"
-                formControlName="phoneNumber"
-              />
-            </td>
-          </tr>
+              <tr>
+                <td class="auto-style1">
+                  <span class="form-label fs-5 fw-bolder" id="Address"
+                    >Address</span
+                  >
+                </td>
+                <td class="auto-style1">
+                  <textarea
+                    name=""
+                    id="AddressTextArea"
+                    class="form-control"
+                    cols="2"
+                    rows="2"
+                    formControlName="address"
+                  ></textarea>
+                </td>
+              </tr>
+              <tr>
+                <td class="auto-style1">
+                  <span class="form-label fs-5 fw-bolder" id="PhoneNumber"
+                    >Phone Number</span
+                  >
+                </td>
+                <td class="auto-style1">
+                  <input
+                    type="number"
+                    name=""
+                    class="form-control"
+                    id="PhoneNumberTextBox"
+                    formControlName="phoneNumber"
+                  />
+                </td>
+              </tr>
 
-          <tr>
-            <td class="auto-style1">
-              <span class="form-label fs-5 fw-bolder" id="DateOfBirth"
-                >Date Of Birth</span
-              >
-            </td>
-            <td class="auto-style1">
-              <input
-                type="date"
-                class="form-control"
-                id="DateOfBirthTextField"
-                formControlName="dateOfBirth"
-              />
-            </td>
-          </tr>
+              <tr>
+                <td class="auto-style1">
+                  <span class="form-label fs-5 fw-bolder" id="DateOfBirth"
+                    >Date Of Birth</span
+                  >
+                </td>
+                <td class="auto-style1">
+                  <input
+                    type="date"
+                    class="form-control"
+                    id="DateOfBirthTextField"
+                    formControlName="dateOfBirth"
+                  />
+                </td>
+              </tr>
 
-          <tr>
-            <td class="auto-style1">
-              <span class="form-label fs-5 fw-bolder" id="DateOfJoining"
-                >Date of Joining</span
-              >
-            </td>
-            <td class="auto-style1">
-              <input
-                type="date"
-                class="form-control"
-                id="DateOfJoiningTextField"
-                formControlName="dateOfJoining"
-              />
-            </td>
-          </tr>
-          <tr>
-            <td class="auto-style1">
-              <span class="form-label fs-5 fw-bolder" id="Photo">Image</span>
-            </td>
-            <td class="auto-style1">
-              <input type="file" id="FileUpload1" class="form-control" />
-              <button
-                class="btn btn-success btn-sm"
-                id="FileUploadSupportBUtton"
-              >
-                Upload File
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td colspan="2">
-              <button class="btn btn-primary" id="Submit" (click)="testApp()">
-                Submit
-              </button>
-              <button
-                class="btn btn-danger"
-                id="Reset_Btn"
-              >
-                Reset
-              </button>
-            </td>
-          </tr>
-        </tbody>
-      
-        </table>
-      </form>
+              <tr>
+                <td class="auto-style1">
+                  <span class="form-label fs-5 fw-bolder" id="DateOfJoining"
+                    >Date of Joining</span
+                  >
+                </td>
+                <td class="auto-style1">
+                  <input
+                    type="date"
+                    class="form-control"
+                    id="DateOfJoiningTextField"
+                    formControlName="dateOfJoining"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td class="auto-style1">
+                  <span class="form-label fs-5 fw-bolder" id="Photo"
+                    >Image</span
+                  >
+                </td>
+                <td class="auto-style1">
+                  <input type="file" id="FileUpload1" class="form-control" />
+                  <button
+                    class="btn btn-success btn-sm"
+                    id="FileUploadSupportBUtton"
+                  >
+                    Upload File
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <button
+                    class="btn btn-primary"
+                    id="Submit"
+                    (click)="testApp()"
+                  >
+                    Submit
+                  </button>
+                  <button class="btn btn-danger" id="Reset_Btn">Reset</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </form>
       </div>
       <div class="d-flex align-items-center justify-content-center col-6">
         <div class="continer">

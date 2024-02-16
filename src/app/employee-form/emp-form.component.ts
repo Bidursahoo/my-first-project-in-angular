@@ -1,15 +1,43 @@
+import { NgFor } from '@angular/common';
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-emp-form',
   standalone: true,
-  imports: [ ReactiveFormsModule],
+  imports: [ NgFor,ReactiveFormsModule],
   styleUrls: ['./emp-form.component.scss'],
   templateUrl: './emp-form.component.html',
 })
 export class EmployeeFormComponent {
   // @ViewChildren('empid') employeeId: ElementRef;
+
+
+  //fetch department data and attach it to front end
+  constructor(private http: HttpClient){
+
+  }
+  departmentList :{
+    ID: number,
+    DEPT_NAME:string
+  }[] = [
+  ];
+  ngOnInit(): void {
+    this.fetchDepartments();
+  }
+  fetchDepartments(): void {
+    this.http.get<any>('https://localhost:44332/api/departmentsValue').subscribe(
+      (response) => {
+        this.departmentList = response.Results;
+      },
+      (error) => {
+        alert('Error fetching departments:');
+      }
+    );
+  }
+
+  //form validation
   regForm = new FormGroup({
     empId: new FormControl(""),
     firstName: new FormControl(""),
@@ -68,7 +96,18 @@ export class EmployeeFormComponent {
   }
   testApp(){
     if(this.validateForm()){
-      console.log("correct");
+      this.http.post<any>('https://localhost:44332/api/createEmployee' , this.regForm.value).subscribe(
+      (response) => {
+        console.log("Success");
+        alert("Succesfully Added Employee");
+        location.reload();
+      },
+      (error) => {
+        alert('Error fetching departments:');
+      }
+    );
     }
   }
+ 
+
 }

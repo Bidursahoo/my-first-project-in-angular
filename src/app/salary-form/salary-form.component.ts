@@ -16,10 +16,4 @@ export class SalaryFormComponent {
     {departmentId: 101, departmentName: "IT"},
     {departmentId: 202, departmentName: "Sales"}
   ];
-  yearList: {
-    year:
-  }[] = [
-    {departmentId: 101, departmentName: "IT"},
-    {departmentId: 202, departmentName: "Sales"}
-  ];
 }

@@ -9,7 +9,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet , HeaderComponent , FooterComponent , HttpClientModule , EmployeePageComponent , HomePageComponent],
+  imports: [RouterOutlet , HeaderComponent , FooterComponent , HttpClientModule , EmployeePageComponent , HomePageComponent , HttpClientModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
